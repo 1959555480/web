@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <button id="btn">1</button>
+    <div id = "pic" class="pic">
+        <img id="img1" src="img/psb (3).jpg">
+    </div>
+    <script type="text/javascript">
+        var btn = document.getElementById("btn");
+        var i = 1;
+        var pic = document.getElementById('pic').children;
+        console.log(pic);
+        btn.onclick = function(){
+            
+            setInterval(function(){
+                i++;
+            document.getElementById("img1").src = "img/psb ("+i+").jpg";
+            if (i==4) {
+                i=0;
+            }
+            console.log(i);
+        },1000);
+        } 
+    </script>
+</body>
+</html>
