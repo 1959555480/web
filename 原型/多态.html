@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>多态</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var showName = function(who){//公用的方法
+			who.showName();
+		}
+		
+		function Father(){
+		}
+		var father = new Father()  
+		Father.prototype.showName = function(){//father
+			console.log("Father");
+		}
+
+		function Son(){
+		}
+		var son = new Son()
+		Son.prototype.showName = function(){//son
+			console.log("Son");
+		}
+
+
+		showName(son);//"Son"
+		showName(father);//"Father"
+	</script>
+</body>
+</html>

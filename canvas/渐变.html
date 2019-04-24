@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>填充线性渐变</title>
+</head>
+<body>
+<div id="canvas-warp">
+    <canvas id="canvas" style="border: 1px solid #aaaaaa; display: block; margin: 50px auto;">
+        你的浏览器居然不支持Canvas？！赶快换一个吧！！
+    </canvas>
+</div>
+
+<script>
+    window.onload = function(){
+        var canvas = document.getElementById("canvas");
+        canvas.width = 800;
+        canvas.height = 800;
+        var context = canvas.getContext("2d");
+
+        context.rect(0,0,800,800);
+
+        // 添加渐变线createLinearGradient
+        var grd = context.createLinearGradient(0,0,0,0);
+
+        //添加颜色断点addColorStop
+        grd.addColorStop(0,"black");
+        grd.addColorStop(0.5,"white");
+        grd.addColorStop(1,"black");
+
+        //应用渐变
+        context.fillStyle = "yellow";
+
+        context.fill();
+
+    }
+</script>
+</body>
+</html>

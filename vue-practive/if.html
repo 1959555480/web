@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>if</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-if="seen">现在你看到我了</p>
+        <template v-if="ok">
+            <h1>superY</h1>
+            <p>学海无涯</p>
+            <p>回头是岸</p>
+        </template>
+        <div v-if="Math.random() > 0.5">
+                Sorry
+        </div>
+        <div v-else>
+                Not sorry
+        </div>
+        <template v-if="loginType === 'username'">
+                <label>Username</label>
+                <input placeholder="Enter your username">
+        </template>
+        <template v-else>
+                <label>Email</label>
+                <input placeholder="Enter your email address">
+        </template>
+        <button v-on:click = "chance">Toggle login type</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+             seen: true,
+             ok: true,
+             loginType: "username"
+            },
+            methods:{
+                chance: function(){
+                    this.loginType = "other"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

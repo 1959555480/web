@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>canvas</title>
+</head>
+<body>
+	<div>
+		<!-- 布置画布 -->
+		<canvas id="canvas"></canvas>
+	</div>
+	<script type="text/javascript">
+		// 获得画布
+		var canvas = document.getElementById('canvas');
+		// 画布大小
+		canvas.width = 800;
+		canvas.height = 800;
+		//获得画笔
+		var context = canvas.getContext('2d');
+
+		context.beginPath();
+		context.moveTo(50,0);//moveTo移动画笔
+		context.lineTo(50,100);//lineTo画笔停点
+		context.lineTo(400,400);
+		context.lineWidth = 5;
+		context.strokeStyle = "red";
+		context.stroke();
+
+		context.beginPath();
+		context.moveTo(100,0);//moveTo移动画笔
+		context.lineTo(100,200);//lineTo画笔停点
+		context.lineTo(400,400);
+		context.lineWidth = 5;
+		context.strokeStyle = "black";
+		context.stroke();
+	</script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>借用构造函数继承</title>
+</head>
+<body>
+<script type="text/javascript">
+	function SuperType(){
+		this.colors = ["1","2","3"];//引用类型
+	}
+	function SubType(){
+		SuperType.call(this);
+	}
+	//通过原型继承
+	SubType.prototype = new SuperType(); 
+	var yyx = new SubType();
+
+	yyx.colors.push('4');
+	console.log(yyx.colors);//1 2 3 4 
+
+	var yyy = new SubType();
+	console.log(yyy.colors);//1 2 3 4
+
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>填充线性渐变</title>
+</head>
+<body>
+<div id="canvas-warp">
+    <canvas id="canvas">
+        你的浏览器居然不支持Canvas？！赶快换一个吧！！
+    </canvas>
+</div>
+
+<script>
+    window.onload = function(){
+        var canvas = document.getElementById("canvas");
+        canvas.width = 800;
+        canvas.height = 800;
+        var context = canvas.getContext("2d");
+       
+        context.arc(100,100,100,1*Math.PI,1.5*Math.PI);
+        context.stroke();
+
+    }
+</script>
+</body>
+</html>
