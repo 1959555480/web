@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <input type="button" value="跑马灯走起" @click="startMethod">
+        <input type="button" value="跑马灯停止" @click="stopMethod">
+
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                msg: '行也苦 亡也苦 青史总让人无奈 更变了朝代 当时的明月换拨人看'
+            },
+            methods:{
+                startMethod: function(){
+                    //添加定时器 点击连续滚动
+                    this.roseId = setInterval(()=>{
+                    //获取第一个字符
+                    var start = this.msg.substring(0,1);//substring （开始，结束）包括开始不包括结束
+                    // //获取后面所有字符
+                    var end = this.msg.substring(1);
+                    this.msg =end + start;
+                },400)    
+                },
+                stopMethod: function(){
+                    clearInterval(this.roseId);
+                }                         
+            }
+        })
+    </script>
+</body>
+
+</html>
