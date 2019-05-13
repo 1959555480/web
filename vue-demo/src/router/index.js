@@ -5,6 +5,10 @@ import Test from '@/view/test'
 import First from '@/view/first'
 import Second from '@/view/second'
 import Good from '@/view/good'
+import Index from '@/view/index'
+import News from '@/view/news'
+import Pages1 from '@/view/pages1'
+import Pages2 from '@/view/pages2'
 
 Vue.use(Router)//创建Router对象
 
@@ -43,5 +47,25 @@ export default new Router({//定义路由表
       name: 'good',
       component: First
     },
+    {
+      path: '/index',
+      name: 'index',
+      component: Index
+    },
+    {
+      path: '/news',
+      name: 'News',
+      component: News
+    },
+    {
+      path: '/pages1',
+      name: 'pages1',
+      component: Pages1
+    },
+    {
+      path: '/pages2',
+      name: 'pages2',
+      component: Pages2
+    }
   ]
 })
