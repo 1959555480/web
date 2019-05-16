@@ -14,7 +14,7 @@ web api练习
 经过以上三部，图片的html代码变成如下格式：
 
 //示例
-<img src="loading.gif" data-img="a.jpg" class="lazyload">
+<!-- <img src="loading.gif" data-img="a.jpg" class="lazyload"> -->
 步骤四
 引入lazyload.js
 
