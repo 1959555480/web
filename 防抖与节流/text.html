@@ -15,20 +15,8 @@
 <body>
     <div id="container"></div>
     <script type="text/javascript">
-        function debounce(func,wait){//具体实现方法
-        var timeout;//用于清除定时器
-        console.log(this);//window
-        return function(){
-        console.log(this);//<div id="container"></div>
-        var that = this;//将this指向正确的对象
-        clearTimeout(timeout);//清除定时器
-        timeout = setTimeout(function(){
-        func.apply(that);
-        },wait);
-        }
-        }
-        function func(){console.log('1')}
-        debounce(func,1000);
+        var now = new Date();
+
     </script>
 </body>
 

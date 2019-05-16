@@ -1,20 +1,39 @@
 var count = 1;
 var container = document.getElementById('container');//获取目标节点
 
-function getUserAction() {//需要防抖或者节流的函数
+function getUserAction(e) {//需要防抖或者节流的函数
     container.innerHTML = count++;
-    // console.log(this);
+    return '111';
 };
-function debounce(func,wait){//具体实现方法
-	var timeout;//用于清除定时器
-	 console.log(this);//window
+
+function debounce(func,wait,immediate){//具体实现方法
+	var timeout,result;//用于清除定时器
+	 // console.log(this);//window
 	return function(){
-		console.log(this);//<div id="container"></div>
+		// console.log(this);//<div id="container"></div>
 		var that = this;//将this指向正确的对象
-		clearTimeout(timeout);//清除定时器
-		timeout = setTimeout(function(){
-			func.apply(that);
-		},wait);
-	}
+		var args = arguments;
+
+		if (timeout) {clearTimeout(timeout)};//清除定时器
+		
+		if (immediate) {
+			//已经执行过，不再执行
+			var callNow = !timeout;
+			timeout = setTimeout(function(){
+				timeout = null;
+			},wait)
+			if (callNow) result = func.apply(that,args);
+		}
+		else{
+			timeout = setTimeout(function(){
+				func.apply(that,args);
+			},wait);
+		}
+		return result;
+	};
 }
-container.onmousemove = debounce(getUserAction,1000);
+var result = debounce(getUserAction,1000,true);
+container.onmousemove = function(){
+	var res = result();
+	console.log(res);
+}
