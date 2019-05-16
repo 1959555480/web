@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>首页</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/swiper.min.css" />
+    <style type="text/css">
+
+        .img_bg{ position: absolute; width: 100%; height: 230%; left: 0; top: 0%;}
+        .logo{ width: 38%; left: 58%; top: 3%;}
+        .title{ width: 70%; left: 18%; top: 8%;}
+        .subtitle{width: 100%; top: 25%; height: 20px; display: flex;justify-content: center;}
+        .subtitle img{ height: 100%; width: auto;}
+        .text2{ width: 100%; text-align: center; top: calc(25% + 24px); font-size: 14px;color: #d2d2d2;}
+        .swiper-container {
+            /*background: #fff;*/
+            width: 100%;
+            height: 320px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 35%;
+            /*display: none;*/
+        }
+        .swiper-slide {
+            height: 300px;
+            text-align: center;
+            font-size: 18px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            justify-content: space-around;
+            width: 90% !important;
+            padding:0 5% !important;
+            flex-wrap: wrap;
+        }
+        .swiper-button-next, .swiper-container-rtl .swiper-button-prev{
+            background-image:url("img/right.png"); width: 20px;height: 36px; background-size: 100% 100%; margin-top: -45px;
+        }
+        .swiper-button-prev, .swiper-container-rtl .swiper-button-next{
+            background-image:url("img/left.png"); width: 20px;height: 36px; background-size: 100% 100%;  margin-top: -45px;
+        }
+        .swiper-pagination-bullet-active{ background: #fff;}
+        .swiper-pagination-bullet{ background: #fff;}
+        .swiper-slide div{ position: static;}
+        .production{ width: 46%;}
+        .production_son{ padding: 6px 0; width: 100%; height: 100px; background: url("img/item_bg.png"); background-size: 100% 100%; }
+        .production_img{width: 92%;margin: 0px auto; border-radius: 6px;overflow: hidden;height: 70px;}
+        .contnt{ display: flex; justify-content: space-between;}
+        .contnt_left{ width: 72%;}
+        .contnt_left p{font-size: 12px;transform:scale(0.9); text-align: left; margin-left: 10px;}
+        .contnt_right{ width: 28%; margin-right: 8px; margin-top: 6px;}
+        .number{ font-size: 12px;text-align: right; margin-top: 6px;}
+        .program_list{width: 80%; left: 10%; bottom: 5%;}
+        .program_list ul{ display: flex; justify-content: space-around; margin-bottom: 6px;}
+        .program_list ul li{margin: 0 4px;}
+        .program_list p{width: 100%; font-size: 12px; text-align: center;transform:scale(0.9);  color: #d2d2d2;}
+        .zan{width: 50%; top: 40%; z-index: 9999; left: 25%; display: none;}
+        .text{
+            margin: 0 auto;
+            top: 83%;
+            left: 13%;
+            width: 65%;
+            font-size: 16px;
+            border: 1px solid #fff;
+            padding: 4% 4% 21% 4%;
+        }
+        .new_job{
+            top: 146%;
+            left: 40%;
+            width: 20%;
+        }
+        .box1{
+            width: 40%;
+            top: 160%;
+            left: 5%; 
+        }
+        .box1 img,.box2 img,.box3 img,.box4 img,.box5 img,.box6 img{
+            display: block;
+            width: 100%;
+        }
+        .box1 img+p,.box2 img+p,.box3 img+p,.box4 img+p,.box5 img+p,.box6 img+p{
+            text-align: center;
+        }
+        .box2{
+            width: 40%;
+            top: 160%;
+            left: 52%;
+        }       
+        .box3{
+            width: 40%;
+            top: 182%;
+            left: 5%; 
+        }      
+        .box4{
+            width: 40%;
+            top: 182%;
+            left: 52%; 
+        }   
+        .box5{
+            width: 40%;
+            top: 205%;
+            left: 5%; 
+        } 
+        .box6{
+            width: 40%;
+            top: 205%;
+            left: 52%; 
+        }
+    </style>
+</head>
+<body>
+<div id="loading">
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+<img src="img/bg.png" class="img_bg" />
+<div class="logo"><img src="img/logo.png" /></div>
+<div class="title"><img src="img/title.png" /></div>
+<div class="subtitle"><img src="img/subtitle1.png" /></div>
+<div class="text2">(每人只能投一票)</div>
+<div class="swiper-container swiper-container0">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="production">
+                <div class="production_son">
+                    <div class="production_img">
+                        <img src="img/test.png" />
+                    </div>
+                    <div class="contnt">
+                        <div class="contnt_left">
+                            <p>姓名杨璐</p>
+                            <p>完美世界</p>
+                        </div>
+                        <div class="contnt_right"><img src="img/tp.png"/></div>
+                    </div>
+                </div>
+                <div class="number">票数：132454</div>
+            </div>
+            <div class="production">
+                <div class="production_son">
+                    <div class="production_img">
+                        <img src="img/test.png" />
+                    </div>
+                    <div class="contnt">
+                        <div class="contnt_left">
+                            <p>姓名杨璐</p>
+                            <p>完美世界</p>
+                        </div>
+                        <div class="contnt_right"><img src="img/tp.png"/></div>
+                    </div>
+                </div>
+                <div class="number">票数：132454</div>
+            </div>
+            <div class="production">
+                <div class="production_son">
+                    <div class="production_img">
+                        <img src="img/test.png" />
+                    </div>
+                    <div class="contnt">
+                        <div class="contnt_left">
+                            <p>姓名杨璐</p>
+                            <p>完美世界</p>
+                        </div>
+                        <div class="contnt_right"><img src="img/tp.png"/></div>
+                    </div>
+                </div>
+                <div class="number">票数：132454</div>
+            </div>
+            <div class="production">
+                <div class="production_son">
+                    <div class="production_img">
+                        <img src="img/test.png" />
+                    </div>
+                    <div class="contnt">
+                        <div class="contnt_left">
+                            <p>姓名杨璐</p>
+                            <p>完美世界</p>
+                        </div>
+                        <div class="contnt_right"><img src="img/tp.png"/></div>
+                    </div>
+                </div>
+                <div class="number">票数：132454</div>
+            </div>
+
+        </div>
+        <div class="swiper-slide">
+            <div onclick="production(this)" class="production">
+                <div class="production_son">
+                    <div class="production_img">
+                        <img src="img/test.png" />
+                    </div>
+                    <div class="contnt">
+                        <div class="contnt_left">
+                            <p>姓名杨璐</p>
+                            <p>完美世界</p>
+                        </div>
+                        <div class="contnt_right"><img src="img/tp.png"/></div>
+                    </div>
+                </div>
+                <div class="number">票数：1</div>
+            </div>
+            <div class="production">
+                <div class="production_son">
+                    <div class="production_img">
+                        <img src="img/test.png" />
+                    </div>
+                    <div class="contnt">
+                        <div class="contnt_left">
+                            <p>姓名杨璐</p>
+                            <p>完美世界</p>
+                        </div>
+                        <div class="contnt_right"><img src="img/tp.png"/></div>
+                    </div>
+                </div>
+                <div class="number">票数：132454</div>
+            </div>
+            <div class="production">
+                <div class="production_son">
+                    <div class="production_img">
+                        <img src="img/test.png" />
+                    </div>
+                    <div class="contnt">
+                        <div class="contnt_left">
+                            <p>姓名杨璐</p>
+                            <p>完美世界</p>
+                        </div>
+                        <div class="contnt_right"><img src="img/tp.png"/></div>
+                    </div>
+                </div>
+                <div class="number">票数：132454</div>
+            </div>
+            <div class="production">
+                <div class="production_son">
+                    <div class="production_img">
+                        <img src="img/test.png" />
+                    </div>
+                    <div class="contnt">
+                        <div class="contnt_left">
+                            <p>姓名杨璐</p>
+                            <p>完美世界</p>
+                        </div>
+                        <div class="contnt_right"><img src="img/tp.png"/></div>
+                    </div>
+                </div>
+                <div class="number">票数：132454</div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
+<div class="zan"><img src="img/zan.png"/></div>
+<div class="text">
+    “华南智慧城杯”2019粤港澳大湾区IT应用系统开发大赛（肇庆赛区）最具网络人气奖（设三名）投票开始啦！大家可以为自己心仪的项目投上神圣一票，投票规则很简单，说明如下：<br>
+    <br>
+投票规则：每个微信账号每天只可以投票2次，每次只能投一个项目，投票起止时间：2019年5月15日起至2019年5月24日10：00止，奖项以票数最高的前三名团队获得。投票结果作为项目初选的参考依据，初选后决出六个项目参加26日肇庆赛区的总决赛。
+</div>
+<div class="new_job"> 
+    <img src="img/logo.jpg">
+</div>
+<div class="box1">
+    <img data-img='img/pic_1.jpg' src="img/loading.png" class="lazyload">
+    <p>多媒体报告厅</p>
+</div>
+<div class="box2">
+    <img data-img='img/pic_2.jpg' src="img/loading.png" class="lazyload">
+    <p>智慧城公园</p>
+</div>
+<div class="box3">
+    <img data-img='img/pic_3.jpg' src="img/loading.png" class="lazyload">
+    <p>智慧城小区</p>
+</div>
+<div class="box4">
+    <img data-img='img/pic_4.jpg' src="img/loading.png" class="lazyload">
+    <p>智慧城大门</p>
+</div>
+<div class="box5">
+    <img data-img='img/pic_5.jpg' src="img/loading.png" class="lazyload">
+    <p>写字楼全景图</p>
+</div>
+
+<div class="box6">
+    <img data-img='img/pic_6.jpg' src="img/loading.png" class="lazyload">
+    <p>智慧城效果图</p>
+</div>
+
+</body>
+<html>
+<head></head>
+<body>
+</body>
+</html>
+<script src="js/jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/loazLoad.js"></script>
+<script>
+    $.imgLazyLoad()
+    window.onload = function(){
+        $('#loading').hide();
+    }
+    var swiper = new Swiper('.swiper-container0', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    var swiper = new Swiper('.swiper-container1', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    var swiper = new Swiper('.swiper-container2', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    $(function(){
+        var index = 0;
+        $("ul li").click(function () {
+            index = $(this).index();
+            $("ul li").eq(0).children('img').attr('src','img/bt0.png');
+            $("ul li").eq(1).children('img').attr('src','img/bt1.png');
+            $("ul li").eq(2).children('img').attr('src','img/bt2.png');
+            $(this).children('img').attr('src','img/bt'+index+'s.png');
+            $(".swiper-container").hide();
+            $(".swiper-container").eq(index).show();
+        })
+        $("ul li:first").click();
+    })
+    function production(on_this) {
+        $(".zan").show();
+        $(".zan").fadeOut(3000);
+    }
+</script>
+</html>
