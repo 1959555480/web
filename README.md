@@ -22,5 +22,8 @@ web api练习
 增加如下代码
 
 $.imgLazyLoad()  
-#new  github 不绿
+
+#new  github 不绿  
+#git config --global user.email "1959555480@qq.com"修改
+#git config user.email查询邮箱  
 
