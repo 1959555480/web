@@ -21,5 +21,6 @@ web api练习
 步骤五
 增加如下代码
 
-$.imgLazyLoad()
+$.imgLazyLoad()  
+#new  github 不绿
 
