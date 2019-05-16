@@ -23,7 +23,7 @@ web api练习
 
 $.imgLazyLoad()  
 
-#new  github 不绿  
-#git config --global user.email "1959555480@qq.com"修改
+#new  github 不绿原因:配置的邮箱出错  
+#git config --global user.email "1959555480@qq.com"修改  
 #git config user.email查询邮箱  
 
