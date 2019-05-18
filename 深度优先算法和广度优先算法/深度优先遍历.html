@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id='root'>
+    <span>123
+        <a href="#">
+            a标签
+        </a>
+        <div>div标签<a>a标签</a></div>
+    </span>
+    <span>span标签
+        <p>p标签</p>
+    </span>
+</div>
+
+<!-- 节点示意图 -->
+
+<!--       root    -->
+<!--     /      \   -->
+<!--  span       span -->
+<!--  /   \      /      -->
+<!-- a     div  p        -->
+<!--         \             -->
+<!--          a             -->
+
+<script>
+// 深度优先
+// 该算法先将当前结点的孩子全部遍历结束，在遍历同一级的节点；
+function deepTraversal(node,nodeList) {  
+    if (node) {    
+        // 将当前节点放入数组中 
+        nodeList.push(node);   
+        // 获得子节点，子节点为一个数组
+        var children = node.children;    // children 属性返回元素的子元素的集合，是一个 HTMLCollection 对象。
+        /*
+
+        children 属性与 childNodes 属性的差别：
+
+        childNodes 属性返回所有的节点，包括文本节点、注释节点；
+        children 属性只返回元素节点；
+
+        */
+        for (var i = 0; i < children.length; i++) 
+            //每次递归的时候将  需要遍历的节点  和  节点所存储的数组传下去
+            deepTraversal(children[i],nodeList);    
+    }    
+    return nodeList;  // 返回所有数组
+    // div -> span -> a -> div -> a -> span -> p
+}  
+var root = document.getElementById('root')
+console.log(`深度优先：`)//
+console.log(deepTraversal(root,nodeList=[]))
+// (7) [div#root, span, a, div, a, span, p]
+</script>
+</body>
+</html>

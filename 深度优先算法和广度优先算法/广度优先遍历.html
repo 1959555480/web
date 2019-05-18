@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<div id='root'>
+    <span>123
+        <a href="#">
+            a标签
+        </a>
+        <div>div标签<a>a标签</a></div>
+    </span>
+    <span>span标签
+        <p>p标签</p>
+    </span>
+</div>
+
+<!-- 节点示意图 -->
+
+<!--       root    -->
+<!--     /      \   -->
+<!--  span       span -->
+<!--  /   \      /      -->
+<!-- a     div  p        -->
+<!--         \             -->
+<!--          a             -->
+
+<script>
+// 广度优先
+// 当使用广度优先遍历的时候，先依次遍历 兄弟节点，然后遍历 兄弟节点下的子节点；
+function wideTraversal(node) {  
+    var nodes = [];  // 创建一个空数组，用于返回
+    if (node != null) {  // 如果节点不为空
+
+        // 广度优先遍历二叉树，也就是按层次的去遍历。
+        // 依次遍历根节点，然后是左孩子和右孩子。所以要遍历完当前节点的所有孩子，
+        // 根据左右孩子的顺序来输出，所以就是先进先出的原则，那么我们当然就想到了 队列 这个数据结构；
+        var queue = []; 
+        queue.unshift(node);  // unshift() 方法可向数组的开头添加一个或更多元素，并返回新的长度。 
+        while (queue.length != 0) {  
+            var item = queue.shift();  // shift() 方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。 
+            nodes.push(item);  
+            var children = item.children;  // // children 属性返回元素的子元素的集合，是一个 HTMLCollection 对象。
+            for (var i = 0; i < children.length; i++)  
+                queue.push(children[i]);  
+        }  
+    }  
+    return nodes;  
+    // div -> span -> span -> a -> div -> p -> a
+}
+var root = document.getElementById('root');
+console.log(`广度优先：`)
+console.log(wideTraversal(root)); 
+// (7) [div#root, span, a, div, a, span, p]
+</script>
+</body>
+</html>
