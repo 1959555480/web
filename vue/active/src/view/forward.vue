@@ -25,13 +25,16 @@ export default{
 </script>
 <style scoped>
 .class{
+    padding: 3% 0 0 0;
+    font-size: 16px;
+    height: 100%;
     background-color: #cc3333;
 }
 li{
     list-style: none;
     position: relative;
     width: 90%;
-    height: 50px;
+    height: 1rem;
     background-color: #ff6666;
     margin: 0 auto;
     border-radius: 50px;
@@ -41,9 +44,9 @@ li .tou{
     position: absolute;
     left: 1%;
     top: 0;
-    width: 16%;
-    height: 96%;
-    border-radius: 53%;
+    width: .95rem;
+    height: .95rem;
+    border-radius: .95rem;
     overflow: hidden;
 }
 li .tou img{
@@ -53,6 +56,7 @@ li .tou img{
 .middle{
     text-align: left;
     position: absolute;
+    padding-top: .1rem;  
     left: 20%;
     top: 0;
     width: 60%;
@@ -63,11 +67,11 @@ p{
 }
 .rank{
     text-align: center;
-    line-height: 211%;
-    width: 11%;
-    height: 73%;
-    border-radius: 20px;
-    background-color: #ffcc99;
+    line-height: .85rem;
+    width: .85rem;
+    height: .85rem;
+    border-radius: .85rem;
+    background-color: red;
     position: absolute;
     right: 5%;
     top: 5%;

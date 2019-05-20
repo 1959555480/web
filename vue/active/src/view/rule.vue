@@ -19,6 +19,8 @@ export default{
 </script>
 <style scoped>
 .rule{
+    font-size: 16px;
+    height: 100%;
     overflow: hidden;
     color: #fff;
     background-color: #cc3333;
