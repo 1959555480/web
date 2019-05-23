@@ -21,5 +21,7 @@
 步骤五<br>
 增加如下代码<br>
 
-$.imgLazyLoad()<br>
+$.imgLazyLoad()<br>  
+# watch vue active项目用纯html css js 写 tab参考https://www.cnblogs.com/yingzi1028/p/6098343.html
+
 
