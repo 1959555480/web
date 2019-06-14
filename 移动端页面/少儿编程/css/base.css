@@ -1,0 +1,114 @@
+.content{
+	height: 75rem;
+	background: url(../img/bigbg.png);
+	background-repeat: repeat-y;
+	color: #fff;
+}
+
+.block{
+	width: 100%;
+	display: block;
+}
+/* 头部 */
+.header{
+	position: relative;
+	padding: 1.17rem 0 0 .92rem;
+}
+.header .text1{
+	font-size: 0.33rem;
+}
+.header .text2{
+	margin-top: 0.1rem;
+	line-height: 0.7rem;
+}
+.header .text2 span:first-child{
+	font-size: .69rem;
+}
+.header .text2 span:last-child{
+	font-size: .48rem;
+}
+.header .text3{
+	font-size: .358rem;
+	line-height: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+/* 助力模块 */
+.big{
+	position: absolute;
+	top: 64rem;
+}
+.end_text6{
+	width: 6.6rem;
+	position: absolute;
+	top: 66.2rem;
+	right: 0.68rem;
+}
+.end_text7{
+	width: 3.6rem;
+	position: absolute;
+	top: 66.5rem;
+	right: 2.88rem;
+	font-size: 16px;
+}
+.end_tou{
+	width: 2.07rem;
+	position: absolute;
+	top: 65rem;
+	right: 0.88rem;
+}
+/*  */
+.end_friend{
+	position: absolute;
+	width: 100%;
+	top: 68.5rem;
+	left: 0;
+}
+.end_friend .num span{
+	color: #12367d;
+}
+.end_friend ul li{
+	float: left;
+	width: 1.22rem;
+	height: 1.22rem;
+	margin-left: 0.25rem;
+	border-radius: 1.22rem;
+	background-color: #7d7d7d;
+}
+.end_friend .num{
+	text-align: center;
+	font-size: 0.56rem;
+	margin-top: 0.27rem;
+	margin-bottom: 0.35rem; 
+}
+.end_friend .text{
+	text-align: center;
+}
+.end_friend .one,.end_friend .two{
+	width: 3.66rem;
+	height: 0.88rem;
+	line-height: 0.88rem;
+	background-color: #45c12d;
+	border-radius: 0.1rem;
+	margin: 0 auto;
+	margin-bottom: 0.3rem;
+	font-size: 0.35rem;
+}
+
+.end_friend a{
+	display: block;
+	color: #fbf8f8;
+}
+.active{
+	background-color: #1a7208;
+}
+.noactive{
+	background-color: #45c12d;
+}

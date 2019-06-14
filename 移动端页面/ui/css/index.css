@@ -1,0 +1,68 @@
+.swiper-container {
+    width: 100%;
+    /* background-color: red; */
+}
+.swiper-wrapper img{
+    width: 100%;
+}
+/* 分类 */
+.choose{
+    margin: .33rem .15rem;
+    border-top: 1px solid #ff6600;
+    border-bottom: 1px solid #ff6600;
+    padding: .25rem .3rem;
+    color: #ff6600;
+}
+.choose ul{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 1.2rem;
+}
+.choose ul a{
+    color: inherit;
+    display: block;
+    width: 100%;
+}
+.choose ul li{
+    width: 18%;
+    height: .49rem;
+    line-height: .49rem;
+    border: 1px solid #ff6600;
+    text-align: center;
+    border-radius: 0.1rem;
+    margin-right: 0.05rem;
+}
+.tab{
+    color: #ff6600;
+}
+.active{
+    color: #fff;
+    background-color: #ff6600;
+}
+/* 推广 */
+.member{
+    margin-bottom: .4rem;
+}
+/* 模板 */
+.mod {
+    padding: 0 .53rem;
+}
+.mod .tit{
+    text-align: center;
+    color: #ff6600;
+    font-size: 14px;
+}
+.mod .nav ul{
+    margin-top: .25rem;
+    width: 100%;
+    display: flex;
+    flex-flow: wrap;
+}
+.mod .nav li{
+    width: 48%;
+    margin-bottom: .25rem;
+}
+.mod .nav li:nth-child(odd){
+    margin-right: .25rem;
+}
