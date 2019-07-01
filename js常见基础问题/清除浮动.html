@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="demoFather">
+		<div class="demoChildren"></div>
+		<div class="demoChildren"></div>
+		<div class="demoChildren"></div>
+	</div>
+	<style type="text/css">
+		.demoFather{
+			margin: 50px auto 0;
+			width: 500px;
+			background-color: red;
+			overflow: auto;
+		}
+		.chearFloat::after{
+			display: block;
+			content: '';
+			clear: both;
+		}
+		.demoChildren{
+			float: left;
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+			border: 1px solid black; 
+		}
+	</style>
+</body>
+</html>

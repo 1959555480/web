@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class="demoFather">
+		<div class="demoChildren"></div>
+	</div>
+	<style type="text/css">
+	/*1 flex*/
+		/*.demoFather{
+			margin: 50px auto 0;
+			width: 500px;
+			height: 500px;
+			background-color: red;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.demoChildren{
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+		}*/
+
+
+	/*2 绝对定位*/
+	/*.demoFather{
+		margin: 50px auto 0;
+		width: 500px;
+		height: 500px;
+		background-color: red;
+		position: relative;
+	}
+	.demoChildren{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -50px;
+		margin-top: -50px;
+		width: 100px;
+		height: 100px;
+		background-color: yellow;
+	}*/
+
+	/*3 css3中的transfrom属性的位移值translate*/
+	.demoFather{
+		margin: 50px auto 0;
+		width: 500px;
+		height: 500px;
+		background-color: red;
+		position: relative;
+	}
+	.demoChildren{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		width: 100px;
+		height: 100px;
+		background-color: yellow;
+	}
+	</style>
+</body>
+</html>

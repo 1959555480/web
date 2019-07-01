@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	//带闭包的
+	var n = 0;
+	function a(){
+		var n = 10;
+		function b(){
+			n++;
+			console.log(n);
+		}
+		b();
+		return b;
+	}
+	console.log(a());
+	var c = a();//把a执行的结果返回给全局c
+	c();
+	console.log(n);
+</script>
+</body>
+</html>
