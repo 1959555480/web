@@ -4,7 +4,7 @@
       <div class="product-board">
         <!-- <img :src="productIcon"> -->
         <ul>
-          <router-link v-for="item in products" :to="{ path: item.path }" tag="li" active-class="active">
+          <router-link v-for="(item,index) in products" :to="{ path: item.path }" tag="li" active-class="active" :key="index">
             {{ item.name }}
           </router-link>
         </ul>
@@ -31,17 +31,17 @@ export default {
         },
         {
           name: '数据预测',
-          path: 'forecast',
+          path: 'foreast',
           active: false
         },
         {
           name: '流量分析',
-          path: 'analysis',
+          path: 'analyse',
           active: false
         },
         {
           name: '广告发布',
-          path: 'publish',
+          path: 'news',
           active: false
         }
       ],
@@ -51,11 +51,6 @@ export default {
         '/detail/analysis': require("../../../assets/images/3.png"),
         '/detail/publish': require("../../../assets/images/4.png")
       }
-    }
-  },
-  computed: {
-    productIcon () {
-      return this.imgMap[this.$route.path]
     }
   }
 }
