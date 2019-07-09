@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function a(xx){
+		this.x = xx;
+		console.log(this);
+		return this;
+	}
+	var x = a(5);
+	var y = a(6);
+	console.log(x.x);
+	console.log(y.x);
+	//this -> window
+	//var x -> underfined
+	//var y -> underfined
+	//window.x -> 5
+	//x = windows
+	//window.x -> 6
+	//y = window
+
+	//x -> 6
+	//y -> window
+</script>
+</body>
+</html>
