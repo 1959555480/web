@@ -3,7 +3,10 @@
   <div id="app">
     <div class="app-head">
       <div class="app-head-inner">
-        <img src="./assets/logo.png">
+        <!-- <img src="./assets/logo.png"> -->
+        <router-link :to="{path: '/'}">
+          <img src="./assets/logo.png">
+        </router-link>
         <div class="head-nav">
           <ul class="nav-list">
             <li v-if="username!==''">{{username}}</li>
@@ -23,7 +26,7 @@
       </keep-alive>
     </div>
     <div class="app-foot">
-      <p>© 2016 fishenal MIT</p>
+      <p>© 2019 fishenal MIT</p>
     </div>
     <!-- 关于页面的弹窗 -->
     <mydialog :isShow="isShowAboutDialog" @onClose="closeDialog('isShowAboutDialog')">
@@ -47,6 +50,7 @@
 import dialog from './components/pages/detail/dialog'
 import login from './components/pages/detail/login'
 import register from './components/pages/detail/register'
+import index from './components/pages/index'
 export default {
   components: {
     mydialog: dialog,

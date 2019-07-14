@@ -4,22 +4,22 @@
       <div class="index-left">
         <div class="index-left-block">
         <h2>全部产品</h2>     
-        <div v-for="(product,index) in productList" :key="index"><!--实际上有两个所以下面item循环的时候是在本事product上的.list-->
+        <template v-for="product in productList"><!--实际上有两个所以下面item循环的时候是在本事product上的.list-->
           <h3>{{ product.title}}</h3>
             <ul>
-              <li v-for="(item,index) in product.list" :key="index">
+              <li v-for="item in product.list">
                 <a :href="item.url">{{ item.name }}</a>
                 <span v-if="item.hot" class="hot-tag">HOT</span>
               </li>
             </ul>
-            <div v-if="!product.last" class="hr" ></div>
-          </div>
+            <div v-if="!product.last" class="hr"></div>
+          </template>
         </div>
         <div class="index-left-block lastest-news">
           <h2>最新消息</h2>
           <ul>
-            <li v-for="(item,index) in newsList" :key="index">
-              <a class="new-item">{{ item }}</a>
+            <li v-for="item in newsList">
+              <a :href="item.url" class="new-item">{{ item.title }}</a>
             </li>
           </ul>
         </div>
@@ -28,12 +28,12 @@
         <slideShow v-bind:slides="this.slides" :inv="slidesSpeed" @onchange="myson"></slideShow>
         <div class="index-board-list">
           <div class="index-board-item" v-for="(item,index) in boardList"
-          :class="[{'line-last' : index % 2 !== 0}, 'index-board-' + item.id]" :key="index">
+          :class="[{'line-last' : index % 2 !== 0}, 'index-board-' + item.id]">
             <div class="index-board-item-inner">
               <h2>{{item.title}}</h2>
               <p>{{item.description}}</p>
               <div class="index-board-button">
-                <router-link class="button" :to="{path: 'detail/' + item.toKey}">立即购买</router-link>
+                <router-link class="button" :to="{path: 'details/' + item.toKey}">立即购买</router-link>
               </div> 
             </div> 
           </div>
@@ -45,16 +45,17 @@
 <script>
 import slideShow from './detail/slideshow'
 export default{
-    created(){
-      this.$axios.get('https://www.easy-mock.com/mock/5d1d5ef2cc4278467e00e7ee/example/a')
-      .then(res=>{
-        console.log(res);//对象
-        this.newsList = res.data.newsList;//数组
-      })
-      .catch(res=>{
-        console.log('error');
-      })
-    },
+    // created(){
+    //   this.$axios.get('https://www.easy-mock.com/mock/5d15ba601bcf1f3cd6c4d7b9/example/abc#!method=get')
+    //   .then(res=>{
+    //     console.log(res);
+    //     this.newsList = res.data.newsList;
+    //     console.log(this.newsList);
+    //   })
+    //   .catch(res=>{
+    //     console.log('error');
+    //   })
+    // },
     data(){
         return{
           slidesSpeed: 1000,
@@ -64,8 +65,7 @@ export default{
               list: [
                 {
                   name: '数据统计',
-                  path: 'details/count',
-                  url: 'http://warcraft.com'
+                  url: 'http://starcraft.com'
                 },
                 {
                   name: '数据预测',
@@ -106,18 +106,17 @@ export default{
               ]
             }
           },
-          newsList:[],
-          // newsList: [
-          //   {
-          //     title: '产品预测'
-          //   },
-          //   {
-          //     title: '产品产量'
-          //   },
-          //   {
-          //     title: '还没完成，需要axios请求数据，格式没转换正确'
-          //   },
-          // ],
+          newsList: [
+            {
+              title: '产品预测'
+            },
+            {
+              title: '产品产量'
+            },
+            {
+              title: '还没完成，需要axios请求数据，格式没转换正确'
+            },
+          ],
           boardList: [
             {
               title: '开放产品',
@@ -153,22 +152,22 @@ export default{
               // js调用src时需要用到require
               src: require('../../assets/slideShow/pic1.jpg'),
               title: 'xxx1',
-              href: 'detail/analysis'
+              href: '#/details/analysis'
             },
             {
               src: require('../../assets/slideShow/pic2.jpg'),
               title: 'xxx2',
-              href: 'detail/count'
+              href: '#/details/count'
             },
             {
               src: require('../../assets/slideShow/pic3.jpg'),
               title: 'xxx3',
-              href: 'http://xxx.xxx.com'
+              href: '#/details/forecast'
             },
             {
               src: require('../../assets/slideShow/pic4.jpg'),
               title: 'xxx4',
-              href: 'detail/forecast'
+              href: '#/details/publish'
             }
           ]
         }

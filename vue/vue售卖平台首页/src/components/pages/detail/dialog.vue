@@ -1,4 +1,5 @@
 <template>
+<!-- 弹窗 -->
   <div>
     <div class="dialog-wrap">
       <div class="dialog-cover" v-if="isShow" @click="closeMe"></div><!--背景 点击关闭-->
@@ -16,7 +17,8 @@
 export default{
     props:{
         isShow:{
-            type: Boolean
+            type: Boolean,
+            // default: true
         }
     },
     data(){

@@ -2,11 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import IndexPage from '../components/pages/index'
 import DetailsIndex from '../components/pages/details/detailsIndex'
-import foreastPage from '../components/pages/details/foreast'
-// import indexPage from '../components/pages/details/sell'
+import analysisPage from '../components/pages/details/analysis'
 import countPage from '../components/pages/details/count'
-import analysePage from '../components/pages/details/analyse'
-import newsPage from '../components/pages/details/news'
+import forecastPage from '../components/pages/details/forecast'
+import publishPage from '../components/pages/details/publish'
 
 Vue.use(Router)
 
@@ -20,22 +19,23 @@ export default new Router({
     {
       path: '/details',
       component: DetailsIndex,
-      redirect: '/details/count',
+      redirect: 'details/count',
       children:[
         {
-          path: 'foreast',
-          component: foreastPage
+          path: 'analysis',//数据分析
+          component: analysisPage
         },
         {
-          path: 'count',
+          path: 'count',//数据统计
           component: countPage
         },
         {
-          path: 'analyse',
-          component: analysePage
-        },{
-          path: 'news',
-          component: newsPage
+          path: 'forecast',//数据预测
+          component: forecastPage
+        },
+        {
+          path: 'publish',//广告发布
+          component: publishPage
         }
       ]
     },

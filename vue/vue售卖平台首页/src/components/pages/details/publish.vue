@@ -1,30 +1,38 @@
 <template>
   <div class="sales-board">
       <div class="sales-board-intro">
-        <h2>数据统计</h2>
-        <p>历史资料、科学实验、检验、统计等所获得的和用于科学研究、技术设计、查证、决策等的数值加以统计为解决方案做前期准备。</p>
+        <h2>广告发布</h2>
+        <p>广告活动按照广告计划执行，到完成广告创作并形成广告作品之后，经过广告主的最后审核同意，即可送到预定的媒介发布刊播。这项工作一般由媒介部门的有关专业人员负责，他们的任务就是专门负责与有关媒介单位接洽，安排有关广告的发播事宜，并对发播质量实施监督。</p>
       </div>
       <div class="sales-board-form">
           <div class="sales-board-line">
               <div class="sales-board-line-left">
-                  产品类型：
+                  购买数量：
               </div>
               <div class="sales-board-line-right">
-                    <VChooser :selections="buyTypes" @onChange="countType"></VChooser>
+                 
               </div>
           </div>
           <div class="sales-board-line">
               <div class="sales-board-line-left">
-                  适用地区：
+                  行业：
               </div>
               <div class="sales-board-line-right">
-                  <VSelection :selections="districts"></VSelection>
+                 
+              </div>
+          </div>
+          <div class="sales-board-line">
+              <div class="sales-board-line-left">
+                  产品版本：
+              </div>
+              <div class="sales-board-line-right">
+         
               </div>
           </div>
           <div class="sales-board-line">
               <div class="sales-board-line-left">
                   有效时间：
-              </div> 
+              </div>
               <div class="sales-board-line-right">
                   半年
               </div>
@@ -40,7 +48,7 @@
           <div class="sales-board-line">
               <div class="sales-board-line-left">&nbsp;</div>
               <div class="sales-board-line-right">
-                  <div class="button"  @click="showPayDialog">
+                  <div class="button">
                     立即购买
                   </div>
               </div>
@@ -48,7 +56,7 @@
       </div>
       <div class="sales-board-des">
         <h2>产品说明</h2>
-        <p>历史资料、科学实验、检验、统计等所获得的和用于科学研究、技术设计、查证、决策等的数值加以统计为解决方案做前期准备。</p>
+        <p>广告活动按照广告计划执行，到完成广告创作并形成广告作品之后，经过广告主的最后审核同意，即可送到预定的媒介发布刊播。这项工作一般由媒介部门的有关专业人员负责，他们的任务就是专门负责与有关媒介单位接洽，安排有关广告的发播事宜，并对发播质量实施监督。</p>
 
         <table class="sales-board-table">
           <tbody>
@@ -240,141 +248,60 @@
           </tbody>
       </table>
       </div>
-      <Dialog :isShow="isShowPayDialog" @onClose="hidePayDialog('isShowPayDialog')">
-        <table class="buy-dialog-table">
-          <tr>
-            <th>产品类型</th>
-            <th>适用地区</th>
-            <th>有效时间</th>
-            <th>总价</th>
-          </tr>
-          <tr>
-            <td>{{ buyType }}</td>
-            <td>{{ buyType.label }}</td>
-            <td>{{ period.label }}</td>
-            <td>{{ price }}</td>
-          </tr>
-        </table>
-        <h3 class="buy-dialog-title">请选择银行</h3>
-        <div class="button buy-dialog-btn">
-          确认购买
-        </div>
-      </Dialog>
-      <Dialog :is-show="isShowErrDialog">
-        支付失败！
-      </Dialog>
   </div>
 </template>
 
 <script>
-import VChooser from '../base/chooser'
-import VSelection from '../base/selection'
-import Dialog from '../detail/dialog'
 export default {
-    components:{
-        VChooser,
-        VSelection,
-        Dialog
-    },
+
   data () {
     return {
-        versions: [],
-        buyType: {},
-        period: {},
-        price: 0,
-        radio: '1',
-        value: '',
-        buyNum: this.min,
-        versions: [],
-        period: {},
-        price: 0,
-        isShowPayDialog: false,
-        bankId: null,
-        orderId: null,
-        isShowCheckOrder: false,
-        isShowErrDialog: false,
-        buyTypes: [
-          {
-          label: '红色版',
+      tradeList: [
+        {
+          label: '出版业',
           value: 0
         },
         {
-          label: '绿色版',
+          label: '媒体',
           value: 1
         },
         {
-          label: '紫色版',
-          value: 2
-        }
-      ],
-      districts: [
-        {
-          label: '北京',
-          value: 0
-        },
-        {
-          label: '上海',
-          value: 1
-        },
-        {
-          label: '广州',
+          label: '金融',
           value: 2
         },
         {
-          label: '天津',
+          label: '互联网',
           value: 3
         },
         {
-          label: '武汉',
+          label: '游戏',
           value: 4
+        }
+      ],
+      versionList: [
+        {
+          label: '初级版',
+          value: 0
         },
         {
-          label: '重庆',
-          value: 5
+          label: '中级版',
+          value: 1
         },
+        {
+          label: '高级版',
+          value: 2
+        },
+        {
+          label: '专家版',
+          value: 3
+        }
       ]
     }
-  },
-  methods: {
-      showPayDialog () {
-        this.isShowPayDialog = true
-        console.log(this.isShowPayDialog)
-        },
-        hidePayDialog () {
-        this.isShowPayDialog = false
-        },
-        hideErrDialog () {
-        this.isShowErrDialog = false
-        },
-        hideCheckOrder () {
-        this.isShowCheckOrder = false
-        },
-    }
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.buy-dialog-title {
-  font-size: 16px;
-  font-weight: bold;
-}
-.buy-dialog-btn {
-  margin-top: 20px;
-}
-.buy-dialog-table {
-  width: 100%;
-  margin-bottom: 20px;
-}
-.buy-dialog-table td,
-.buy-dialog-table th{
-  border: 1px solid #e3e3e3;
-  text-align: center;
-  padding: 5px 0;
-}
-.buy-dialog-table th {
-  background: #4fc08d;
-  color: #fff;
-  border: 1px solid #4fc08d;
-}
+<style>
+
 </style>

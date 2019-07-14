@@ -2,9 +2,10 @@
   <div class="detail-wrap">
     <div class="detail-left">
       <div class="product-board">
-        <!-- <img :src="productIcon"> -->
+        <img :src="productIcon">
         <ul>
-          <router-link v-for="(item,index) in products" :to="{ path: item.path }" tag="li" active-class="active" :key="index">
+          <router-link v-for="(item,index) in products" :to="{ path: item.path }" tag="li" active-class="active" :key="index
+          ">
             {{ item.name }}
           </router-link>
         </ul>
@@ -22,6 +23,8 @@
 export default {
   data () {
     return {
+      max: 10,
+      min: 2,
       products: [
         {
           name: '数据统计',
@@ -31,26 +34,31 @@ export default {
         },
         {
           name: '数据预测',
-          path: 'foreast',
+          path: 'forecast',
           active: false
         },
         {
           name: '流量分析',
-          path: 'analyse',
+          path: 'analysis',
           active: false
         },
         {
           name: '广告发布',
-          path: 'news',
+          path: 'publish',
           active: false
         }
       ],
       imgMap: {
-        '/detail/count': require("../../../assets/images/1.png"),
-        '/detail/forecast': require("../../../assets/images/2.png"),
-        '/detail/analysis': require("../../../assets/images/3.png"),
-        '/detail/publish': require("../../../assets/images/4.png")
+        '/details/count': require("../../../assets/images/1.png"),
+        '/details/forecast': require("../../../assets/images/2.png"),
+        '/details/analysis': require("../../../assets/images/3.png"),
+        '/details/publish': require("../../../assets/images/4.png")
       }
+    }
+  },
+  computed: {
+    productIcon () {
+      return this.imgMap[this.$route.path]
     }
   }
 }
