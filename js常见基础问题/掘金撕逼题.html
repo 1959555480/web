@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	var a = { n:1 };
+	var b = a;
+	a.x = a = { n:2 };
+	console.log(a.x);//undefined
+	console.log(b.x);//{ n:2 }
+	console.dir(a);//{ n:2 }
+	console.dir(b);//{ n:1,x:{ n:2 } }
+	/*
+	首先在声明阶段
+		声明了对象a是一个对象(a地址指向堆中的{n:2})
+		然后b是对象a的一个引用(即b也指向了a地址所指向的堆中的{n:2})
+	赋值阶段
+		先计算a.x--->不存在，所以undefined--->{n:1,x:undefined}
+		a--->新的对象a
+		最后a = { n:2 }--->新的对象a地址指向了堆中的{ n:2 }
+		a.x = a---> 新的对象a地址指向的{ n:2 }被赋值到了旧a下的属性,即之前为undefined的值--->{n:1,x:{n:2}}
+	输出阶段
+		a.x为新的a-->a{ n:2 },a对象并不存在对象x，所以为undefined
+		b.x为旧的a引用--->{n:1,x:{n:2}},所以能找到改变后的对象x，为{ n:2 }
+	*/
+</script>
+</body>
+</html>

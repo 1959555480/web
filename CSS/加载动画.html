@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-use-rem="750">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link href="./css/base.css" rel="stylesheet" type="text/css"/>
+    <link href="./css/swiper.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+        <div class="container">
+            <p>加载动画</p>
+            <div style="width: 100%;display: flex;flex-direction: row;justify-content: center;">
+              <div class="a"></div>
+              <div class="b"></div>
+              <div class="c"></div>
+            </div>
+          </div>
+</body>
+<script src="http://dn.yunzhenshi.com/js/jquery-1.8.3.min.js"></script>
+<style type="text/css">
+*{
+  padding: 0;
+  margin: 0;
+}
+.container{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.a{
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  opacity: 1;
+  border-radius: 50%;
+  animation: loading1 2s ease-out;
+  animation-iteration-count: infinite;  
+}
+.b{
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  opacity: 0.75;
+  border-radius: 50%;
+  animation: loading2 2s ease-out;
+  animation-iteration-count: infinite;
+  animation-delay: 0.5s;
+}
+.c{
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  opacity: 0.5;
+  border-radius: 50%;
+  animation: loading3 2s ease-out;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;  
+}
+@-webkit-keyframes loading1 {
+  0%{
+     opacity: 1; 
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@-webkit-keyframes loading2 {
+  0%{
+     opacity: 1; 
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@-webkit-keyframes loading3 {
+  0%{
+     opacity: 1; 
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+
+  .wave{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 44px;
+    height: 44px;
+    margin-top: -25px;
+    margin-left: -25px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    border: 3px solid #003366;
+    color: #fff;
+    font-size: 12px;
+    animation: waveCircle 0.5s ease-out;
+    animation-iteration-count: infinite;
+  }
+
+  @-webkit-keyframes waveCircle {
+    0%{
+      /* transform: scale(1); */
+      /* opacity: 1; */
+    }
+    50%{
+      transform: scale(1.5);
+      opacity: 0.5;
+    }
+    100%{
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+</style>
+</html>
