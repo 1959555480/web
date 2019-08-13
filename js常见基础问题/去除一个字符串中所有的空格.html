@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var str = '   abc e f g'
+        // function trim(){
+        //     var reg = /\s+/g;
+        //     if(typeof str === 'string'){
+        //         var trimS = str.replace(reg,'');
+        //     }
+        //     console.log(trimS)
+        // }
+        // // 去除字符串空格
+        // trim(str)
+
+        var str = ' a b d fff'
+        function nTrim(){
+            var reg = /\s+/g;
+            var trims = str.replace(reg,'');
+            console.log(trims)
+        }
+        nTrim(str)
+    </script>
+</body>
+</html>
