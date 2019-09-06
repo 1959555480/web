@@ -24,8 +24,7 @@ class Promise{
                 this.reason = reason
             }
         }
-
-        executor(resolve,reject)
+        executor(resolve,reject) 
     }
 }
 
