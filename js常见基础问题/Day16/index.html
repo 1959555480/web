@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        顶头
+        <button id="bt">回到顶部</button>
+    </div>
+    <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    .content{
+        text-align: center;
+        position: relative;
+        width: 100vw;
+        height: 1000px;
+        background-color: skyblue;
+    }
+    button{
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+    }
+    </style>
+    <script>
+        var btn = document.getElementsByTagName('button');//数组
+        // var bt = document.getElementById('bt')
+        // console.log(btn,bt)
+        btn[0].addEventListener('click',function(){
+            window.scrollTo(0,0)
+        })
+    </script>
+</body>
+</html>
