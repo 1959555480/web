@@ -10,6 +10,7 @@
  * @param {number} target
  * @return {number}
  */
+//不使用sort 时间更快 空间更少
 var searchInsert = function (nums, target) {
   if (nums.indexOf(target) != -1) {
     // 存在
@@ -24,6 +25,7 @@ var searchInsert = function (nums, target) {
     return nums.length
   }
 };
+
 // 使用sort + indexOf
 // var searchInsert = function(nums, target) {
 //   if(nums.indexOf(target)!=-1){
