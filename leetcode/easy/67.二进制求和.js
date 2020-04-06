@@ -27,9 +27,16 @@ var addBinary = function (a, b) {
 addBinary("1010", "1011")
 
 // 直接使用BigInt
+<<<<<<< HEAD
 var addBinary = function(a, b) {
   return (BigInt(`0b${a}`)+BigInt(`0b${b}`)).toString(2)
 };
 console.log(addBinary("11","1"))
+=======
+// var addBinary = function(a, b) {
+//   return (BigInt(`0b${a}`)+BigInt(`0b${b}`)).toString(2)
+// };
+// console.log(addBinary("11","1"))
+>>>>>>> 860e6401098fbcaeeec55f1ea095b1cacc4811d7
 // @lc code=end
 
