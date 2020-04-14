@@ -22,16 +22,17 @@ var levelOrderBottom = function(root) {
 
   let queue = []
   let cur = root
-  queue.push(root)
+  queue.push(root) 
 
   let level = 0
   while(queue.length!==0){
+    res.push([])
     let len = queue.length
     for(let i = 0; i<len;i++){
       cur = queue.shift();
       res[level].push(cur.val)
       cur.left && queue.push(cur.left)
-      cur.right &&  queue.push(cur.right)
+      cur.right && queue.push(cur.right)
     }
     level++
   }
