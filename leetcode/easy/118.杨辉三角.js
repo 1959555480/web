@@ -18,9 +18,9 @@ var generate = function (numRows) {
     }
     list.push(item)
   }
-  if(numRows>2){
+  if(numRows>2){//大于2才开始要进行相加
     for(let i = 2; i<numRows;i++){
-      for(let j = 1; j<i;j++){
+      for(let j = 1; j<i;j++){//j 是第i项第j个元素要相加 上一行的对应左右元素
         list[i][j] = list[i-1][j-1]+list[i-1][j]
       }
     }
