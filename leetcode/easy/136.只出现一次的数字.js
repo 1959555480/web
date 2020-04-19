@@ -10,7 +10,15 @@
  * @return {number}
  */
 var singleNumber = function(nums) {
-111
+  let newArr = nums.sort(function(a,b){
+    return a-b
+  })
+  for(let i = 0; i<newArr.length; i++){
+    if(newArr[i]!==nums[i-1]&&newArr[i]!==nums[i+1]){
+      return newArr[i]
+    }
+  }
 };
+// singleNumber([4,1,2,1,2])
 // @lc code=end
 
