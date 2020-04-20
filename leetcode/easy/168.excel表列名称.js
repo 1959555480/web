@@ -22,7 +22,6 @@ var convertToTitle = function(n) {
       str = String.fromCharCode(temp+65) +str
     }
     return str
-    // console.log(str)
   }
   
 };
