@@ -22,7 +22,7 @@ var addDigits = function (num) {
   // } else {
   //   return addDigits(newStr)
   // }
-  // return newStr < 10 ? newStr : addDigits(newStr)
+  return newStr < 10 ? newStr : addDigits(newStr)
 };
 // console.log(addDigits(38))
 // @lc code=end
