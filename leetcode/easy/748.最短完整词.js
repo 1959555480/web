@@ -18,15 +18,17 @@ var shortestCompletingWord = function (licensePlate, words) {
   for (let i = 0; i < words.length;) {
     for (let j = 0; j < letter.length;) {
       console.log("提交", words[i], letter[j], words[i].indexOf(letter[j]) == 0)
-      if (words[i].indexOf(letter[j] == -1)) { // 不存在
-        j++
-        if (j == letter.length-1) {
-          console.log("letter[i]", letter[i])
-        }
-      } else { // 存在
+      if (words[i].indexOf(letter[j])== -1) { // 不存在
+        console.log(1)
         i++
         j = 0
-        console.log(j)
+
+      } else { // 存在
+        j++
+        console.log(2)
+        if (j == letter.length) {
+          console.log("letter[i]", letter[i])
+        }
         break
       }
     }
