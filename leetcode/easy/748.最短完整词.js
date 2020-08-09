@@ -25,7 +25,7 @@ var shortestCompletingWord = function (licensePlate, words) {
 
       } else { // 存在
         j++
-        console.log(2)
+        console.log(2)aaaaaa
         if (j == letter.length) {23
           console.log("letter[i]", letter[i])
         }
