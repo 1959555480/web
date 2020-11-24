@@ -11,29 +11,38 @@
  * @return {string}
  */
 var shortestCompletingWord = function (licensePlate, words) {
-  let letter = licensePlate.match(/[A-Za-z]/g).join('').toLowerCase()
-  words = words.sort(function (a, b) {
-    return a.length - b.length
-  })
-  for (let i = 0; i < words.length;) {
-    for (let j = 0; j < letter.length;) {
-      console.log("提交", words[i], letter[j], words[i].indexOf(letter[j]) == 0)
-      if (words[i].indexOf(letter[j])== -1) { // 不存在
-        console.log(1)
-        i++
-        j = 0
+  //处理牌照
+  var str = /[a-zA-Z]/g
+  var t = licensePlate.toLowerCase().match(str)
+  console.log(t)
 
-      } else { // 存在
-        j++
-        console.log(2)aaaaaa
-        if (j == letter.length) {23
-          console.log("letter[i]", letter[i])
+  //处理单词
+  var count = 1000000;
+  var result = ''
+
+  words.map(function (item) {
+    var a = item.split('');
+
+    for (var i = 0; i < t.length; i++) {
+      var flag = false
+      for (var j = 0; j < a.length; j++) {
+        if (t[i] == a[j]) {
+          a.splice(j, 1)
+          flag = true
+          break;
         }
-        break
+      }
+      if (flag == false) {
+        return
       }
     }
-  }
-  console.log("-1")
+
+    if (item.length < count) {
+      count = item.length
+      result = item
+    }
+  })
+  return result
 };
-shortestCompletingWord("1s3 PSt", ["step2222222222", "steps", "stripe", "stepple"])
+console.log(shortestCompletingWord("1s3 PSt", ["step", "steps", "stripe", "stepple"]))
 // @lc code=end
