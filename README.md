@@ -27,3 +27,9 @@ $.imgLazyLoad()
 #git config user.email查询邮箱 
 #5.20/2019 template is的用法 实现tab:class
 
+* 提交规范
+```
+git commit -am "docs(changelog): update changelog to beta.5"
+git commit -am "fix(release): need to depend on latest rxjs and zone.js"
+```
+
