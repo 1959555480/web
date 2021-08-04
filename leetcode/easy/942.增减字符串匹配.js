@@ -17,7 +17,7 @@ var diStringMatch = function(s) {
   }
   for(let i = 0;i<s.length;i++){
     if(s[i]==='I'){
-      target.push(+sourse.splice(0,1))
+      target.push(sourse.shift())
     }else{
       target.push(sourse.pop())
     }
