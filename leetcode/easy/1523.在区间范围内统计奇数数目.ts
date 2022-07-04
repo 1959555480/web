@@ -6,7 +6,7 @@
 
 // @lc code=start
 function countOdds(low: number, high: number): number {
-return  Math.floor((high+1)/2)-((low)/2)
+return  Math.floor((high+1)/2)-Math.floor((low)/2)
 };
 console.log(countOdds(8,10))
 // @lc code=end
